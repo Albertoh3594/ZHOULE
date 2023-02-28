@@ -18,14 +18,33 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'Comment');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'nombre',
+        'apellido1',
         'email',
+        'f_nacimiento',
+        'tlf_movil',
         'password',
     ];
 
