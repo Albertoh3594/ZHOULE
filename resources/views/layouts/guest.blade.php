@@ -7,13 +7,17 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <!-- Font Icon -->
+        <link rel="stylesheet" href="{{ asset('fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
         <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
         <!-- Scripts -->
+        <script src="{{ asset('js/main.js')}}"></script>
         <script src="{{ mix('js/app.js') }}" defer></script>
 
         <!-- Boostrap -->

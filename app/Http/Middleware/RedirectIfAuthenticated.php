@@ -21,12 +21,16 @@ class RedirectIfAuthenticated
     {
         $guards = empty($guards) ? [null] : $guards;
 
+        //Modificacion para comprobar el rol de admin y si es así le redirige a la pantalla de admin
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                if (Auth::guard($guard)->user()->rol == 'admin') {
+                    return redirect(RouteServiceProvider::ADMIN);
+                } else {
+                    return redirect(RouteServiceProvider::HOME);
+                }
             }
         }
-
         return $next($request);
     }
 }

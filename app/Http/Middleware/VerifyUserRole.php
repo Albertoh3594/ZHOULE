@@ -17,9 +17,20 @@ class VerifyUserRole
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
+
+     // FUNCION PARA COMPROBAR SI EL USUARIO EL ADMIN Y REDIRIGIRLO A LA PANTALLA DE ADMIN
+    /* public function handle(Request $request, Closure $next)
+    {
+        if (Auth::check() && Auth::user()->role == 'admin') {
+            return redirect('/admin');
+        }
+
+        return $next($request);
+    } */
+
     public function handle(Request $request, Closure $next, ...$roles)
     {
-        if (!Auth::check()){
+        if (!Auth::check()) {
             return redirect('/');
         }
 
