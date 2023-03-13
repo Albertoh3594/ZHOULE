@@ -1,0 +1,100 @@
+/*ERRORES*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#main-error {
+    position: relative;
+    height: 100vh;
+    background: #030005;
+}
+
+#main-error .container-error {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.container-error {
+    max-width: 767px;
+    width: 100%;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.container-error .content-error {
+    position: relative;
+    height: 180px;
+    margin-bottom: 20px;
+    z-index: -1;
+}
+
+.container-error .content-error h1 {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 224px;
+    font-weight: 900;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: -12px;
+    color: #030005;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0px #58ab90, 1px 1px 0px #b18757;
+    letter-spacing: -20px;
+}
+
+.container-error .content-error h2 {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 110px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 0px #b18757;
+    letter-spacing: 13px;
+    margin: 0;
+}
+
+.container-error a {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid;
+    background: transparent;
+    padding: 10px 40px;
+    font-size: 14px;
+    font-weight: 700;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+.container-error a:hover {
+    color: #b18757;
+}
+
+@media only screen and (max-width: 767px) {
+    .container-error .content-error h2 {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container-error .content-error h1 {
+        font-size: 182px;
+    }
+}

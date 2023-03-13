@@ -17,15 +17,9 @@ use App\Http\Controllers\ProductController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
- */
 Route::get('/', function () {
-    return view('welcome');
-});
-
+    return view('index');
+})->name('index');
 /*
 Route::resource('/admin', function(){
     if (Auth::check() && Auth::user()->rol == "admin") {
@@ -39,7 +33,8 @@ Route::get('/admin', function () {
     return view('admin.index');
 })->name('admin');
 
-/* Route::resource('/admin', AdminController::class)->middleware('rol:admin'); */
+
+Route::resource('/admin', AdminController::class)->middleware('rol:admin');
 
 
 Route::prefix('products')->group(function () {
@@ -51,7 +46,7 @@ Route::prefix('products')->group(function () {
 
 Route::get('/errors', function () {
     return view('errors.401');
-})->name('welcome');
+});
 
 Route::middleware([
     'auth:sanctum',

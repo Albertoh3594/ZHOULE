@@ -23,10 +23,10 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'nombre' => ['required', 'string'],
-            'apellido1' => ['required', 'string', 'max:80'],
-            'apellido2' => ['string', 'max:80'],
+            'apellidos' => ['required', 'string', 'max:80'],
+            /* 'apellido2' => ['string', 'max:80'],
             'f_nacimiento' => ['required', 'date'],
-            'tlf_movil' => ['numeric'],
+            'tlf_movil' => ['numeric'], */
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
@@ -34,10 +34,10 @@ class CreateNewUser implements CreatesNewUsers
         return User::create([
             'email' => $input['email'],
             'nombre' => $input['nombre'],
-            'apellido1' => $input['apellido1'],
-            'apellido2' => $input['apellido2'],
+            'apellidos' => $input['apellidos'],
+            /* 'apellido2' => $input['apellido2'],
             'f_nacimiento' => $input['f_nacimiento'],
-            'tlf_movil' => $input['tlf_movil'],
+            'tlf_movil' => $input['tlf_movil'], */
             'password' => Hash::make($input['password']),
         ]);
     }
