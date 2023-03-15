@@ -1,5 +1,4 @@
 <x-guest-layout>
-    <div>
         <div class="container-link-home">
             <a class="link-home" href="{{ route('index') }}">{{-- <span class="zmdi zmdi-home"></span> --}}HOME</a>
         </div>
@@ -36,6 +35,5 @@
                         </form>
                     </div>
                 </div>
-
             </div>
 </x-guest-layout>

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+footer {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 2rem 8%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: auto;
+    height: fit-content;
+}
+
+.logo {
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.social-icons-container,
+.footer-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    background-image: url('../images/redes/FacebookBlanco.png');
+    background-position: center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    margin: 1rem;
+}
+
+.social-icon:hover {
+    background-color: #000;
+    filter: invert(1);
+}
+
+.social-icon:nth-of-type(2) {
+    background-image: url('../images/redes/InstagramBlanco.png');
+}
+
+.social-icon:nth-of-type(3) {
+    background-image: url('../images/redes/TwitterBlanco.png');
+}
+
+.social-icon:nth-of-type(4) {
+    background-image: url('../images/redes/LinkedinBlanco.png');
+}
+
+.footer-menu-container {
+    list-style-type: none;
+    color: #fff;
+    font-size: 18px;
+    font-family: Oswald;
+}
+
+.menu-item {
+    margin: 1rem 1.5rem;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.menu-item:hover {
+    opacity: 1;
+}
+
+.copyright {
+    color: #fff;
+    opacity: 0.3;
+    text-align: center;
+    font-family: Oswald;
+}
