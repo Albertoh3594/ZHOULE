@@ -1,6 +1,6 @@
 <header>
     <div class="navbar">
-        <a href="#"><img src="{{asset('images/Logo_XS.png')}}" alt="logo" id="logo"></a>
+        <a href="#"><img src="{{asset('images/Logo.png')}}" alt="logo" id="logo"></a>
         <div id="menuArea">
             <input type="checkbox" id="menuToggle" class="input"></input>
 
@@ -39,7 +39,7 @@
             </div>
         </nav>
         <div class="logo-medio">
-            <a href="#"><img src="{{asset('images/Logo_XS.png')}}" alt="logo" id="logo1"></a>
+            <a href="#"><img src="{{asset('images/Logo.png')}}" alt="logo" id="logo1"></a>
         </div>
         <div class="container-iconos">
             <div>

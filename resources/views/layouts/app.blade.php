@@ -7,6 +7,9 @@
 
         <title>{{ config('app.name', 'ZHOULE') }}</title>
 
+        {{-- Icono pagina --}}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
