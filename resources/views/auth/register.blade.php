@@ -3,7 +3,7 @@
     <div class="container-link-home">
         <a class="link-home" href="{{ route('index') }}">{{-- <span class="zmdi zmdi-home"></span> --}}HOME</a>
     </div>
-        <x-jet-validation-errors class="mb-3" />
+        {{-- <x-jet-validation-errors class="mb-3" /> --}}
 
 
         <div class="main-login-register">
@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                                <x-jet-checkbox id="terms" name="terms" required />
+                                <x-jet-checkbox id="terms" name="terms" />
                                 <label class="custom-control-label" for="terms">
                                     {!! __('He leído los :terms_of_service y :privacy_policy', [
                                         'terms_of_service' => '<a target="_blank" href="' . route('terms.show') . '">' . __('Terminos') . '</a>',

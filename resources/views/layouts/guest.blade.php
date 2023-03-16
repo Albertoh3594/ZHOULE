@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/main.js')}}"></script>
+        <script src="{{ asset('js/login-register.js')}}"></script>
         <script src="{{ mix('js/app.js') }}" defer></script>
 
         <!-- Boostrap -->

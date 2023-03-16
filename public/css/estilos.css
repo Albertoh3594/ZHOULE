@@ -24,17 +24,12 @@ body {
     display: none;
     background-repeat: no-repeat;
     font-size: 20px;
-    color: black;
+    color: #191464;
     cursor: pointer;
     position: fixed;
     bottom: 10px;
     right: 10px;
-    z-index: 2;
-    transition: all 0.5s;
-}
-
-.ir-arriba:hover {
-    color: #b18757;
+    z-index: 9999;
 }
 
 

@@ -43,18 +43,29 @@
         </div>
         <div class="container-iconos">
             <div>
-                <a href="#"><span class="fas fa-search"></span></a>
+                <a href="#" title="Icono para la busqueda"><span class="fas fa-search"></span></a>
             </div>
             <div>
-                <a href="#"><span class="fas fa-shopping-cart"></span></a>
+                <a href="#" title="Icono para el carrito de la compra"><span class="fas fa-shopping-cart"></span></a>
             </div>
             <div class="dropdown">
-                <button class="dropbtn far fa-user-circle"></button>
+                <button class="dropbtn far fa-user-circle" value="Desplegar menu oculto" title="Desplegar el menu oculto para iniciar sesión y registrarse"></button>
                 <div class="dropdown-content">
-                  <a href="{{route('login')}}">Iniciar Sesion</a>
-                  <a href="{{route('register')}}">Registrarse</a>
+                    @if (Route::has('login'))
+                        @auth
+                            <a href="{{route('profile.show')}}">Perfil</a>
+                            <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Salir</a>
+                            <form method="POST" id="logout-form" action="{{ route('logout') }}">
+                                @csrf
+                            </form>
+                        @else
+                            <a href="{{route('login')}}" title="Pagina Iniciar Sesion">Iniciar Sesión</a>
+                            @if (Route::has('register'))
+                                <a href="{{route('register')}}">Registrarse</a>
+                            @endif
+                        @endif
+                    @endif
                 </div>
-
             </div>
         </div>
 
@@ -65,25 +76,25 @@
             <div class="contenido">
                 <h1>ZHOULE TEAM</h1>
                 <p>Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has been the industry’s standard dummy. Lorem Ipsum has been the industry’s standard dummy.</p>
-                <a href="#contenido-area" class="flecha-slider"></a>
+                <a href="#contenido-area" class="flecha-slider" title="Flecha para bajar al contenido"></a>
             </div>
-            <img src="{{asset("/images/home/slider-1.jpg")}}" alt="foto1">
+            <img src="{{asset("/images/home/slider-1.webp")}}" alt="foto1">
         </div>
         <div class="slide">
             <div class="contenido">
                 <h1>ZHOULE TEAM</h1>
                 <p>Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has been the industry’s standard dummy. Lorem Ipsum has been the industry’s standard dummy.</p>
-                <a href="#contenido-area" class="flecha-slider"></a>
+                <a href="#contenido-area" class="flecha-slider" title="Flecha para bajar al contenido"></a>
             </div>
-            <img src="{{asset("/images/home/slider-2.jpg")}}" alt="foto2">
+            <img src="{{asset("/images/home/slider-2.webp")}}" alt="foto2">
         </div>
         <div class="slide">
             <div class="contenido">
                 <h1>ZHOULE TEAM</h1>
                 <p>Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has been the industry’s standard dummy. Lorem Ipsum has been the industry’s standard dummy.</p>
-                <a href="#contenido-area" class="flecha-slider"></a>
+                <a href="#contenido-area" class="flecha-slider" title="Flecha para bajar al contenido"></a>
             </div>
-            <img src="{{asset("/images/home/slider-3.jpg")}}" alt="foto3">
+            <img src="{{asset("/images/home/slider-3.webp")}}" alt="foto3">
         </div>
     </div>
 

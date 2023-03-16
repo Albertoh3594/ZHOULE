@@ -4,8 +4,7 @@ $(document).ready(function() {
     navbarFixed();
     irArriba();
     dropMenuLR();
-    verContraseña();
-    verConfirmarContraseña();
+    enlacesHashtag();
 
     //obtener el elemento span por el id move
     let move = document.getElementById("move");
@@ -65,32 +64,24 @@ $(document).ready(function() {
 
 });
 
-/*FUNCION PARA PODER OCULTAR Y VER LA CONTRASEÑA CON EL ICONO DEL OJO*/
-function verContraseña() {
-    $(".toggle-password").click(function() {
-        /* alert($(this).attr('toggle')); */
-        $(this).toggleClass("zmdi-eye zmdi-eye-off");
-        var input = $($(this).attr("toggle"));
-        if (input.attr("type") == "password") {
-            input.attr("type", "text");
+/*Seleccionar todos los enlaces con atributo href que empiecen con el valor "#" y se añade un evento click a cada uno, entonces al hacer click en cualquie enlace se calcela el comportamiento predeterminado que tiene de añadir un # en el enlace*/
+
+function enlacesHashtag() {
+    $('a[href^="#"]').on('click', function(event) {
+        var enlace = $(this).attr('href');
+        if (enlace === '#') {
+            event.preventDefault();
+        } else if (enlace.charAt(0) === '#') {
+            var seccion = $(enlace);
+            if (seccion.length) {
+                event.preventDefault();
+                event.stopPropagation();
+                $('html, body').animate({
+                    scrollTop: seccion.offset().top
+                }, 500);
+            }
         } else {
-            input.attr("type", "password");
-        }
-    });
-};
-
-
-/*FUNCION PARA PODER OCULTAR Y VER EL INPUT CONFIRMAR CONTRASEÑA CON EL ICONO DEL OJO*/
-
-function verConfirmarContraseña() {
-    $(".toggle-password-confirmation").click(function() {
-        /* alert($(this).attr('toggle')); */
-        $(this).toggleClass("zmdi-eye zmdi-eye-off");
-        var input = $($(this).attr("toggle"));
-        if (input.attr("type") == "password") {
-            input.attr("type", "text");
-        } else {
-            input.attr("type", "password");
+            event.preventDefault();
         }
     });
 };

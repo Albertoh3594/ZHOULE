@@ -22,7 +22,7 @@
                                 <x-jet-input-error for="email"></x-jet-input-error>
                             </div>
                             <div class="form-group">
-                                <input id="password" type="password" name="password" class="form-input {{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="Contraseña"/>
+                                <input id="password" type="password" name="password" class="form-input {{ $errors->has('password') ? ' is-invalid' : '' }}" required autocomplete="current-password" placeholder="Contraseña"/>
                                 <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                                 <x-jet-input-error for="password"></x-jet-input-error>
                                 @if (Route::has('password.request'))

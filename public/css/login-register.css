@@ -12,7 +12,7 @@ body {
     font-weight: 600;
     font-family: 'Poppins';
     margin: 0px;
-    background-image: url("../images/login-register/body-bg.jpg");
+    background-image: url("../images/login-register/body-bg.webp");
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -173,7 +173,7 @@ input:focus {
     width: 1000px;
     padding-top: 135px;
     padding-bottom: 115px;
-    background-image: url("../images/login-register/container-register-bg.png");
+    background-image: url("../images/login-register/container-register-bg.webp");
     background-repeat: no-repeat;
     background-size: cover;
     -moz-background-size: cover;
@@ -301,7 +301,7 @@ input[type=checkbox]:not(old):checked+label>span:before {
     width: 1000px;
     padding-top: 135px;
     padding-bottom: 115px;
-    background-image: url("../images/login-register/container-login-bg.png");
+    background-image: url("../images/login-register/container-login-bg.webp");
     background-repeat: no-repeat;
     background-size: cover;
     -moz-background-size: cover;
