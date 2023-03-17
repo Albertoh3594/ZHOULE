@@ -29,20 +29,27 @@ Route::resource('/admin', function(){
     }
 });
 */
+
+Route::get('/productos', [ProductController::class, 'index'])->name('productos');
+Route::get('/productos/data', 'App\Http\Controllers\ProductController@getProducts');
+
+Route::get('/producto/{id}', [ProductController::class, 'show'])->name('producto');
+
+
 Route::get('/admin', function () {
     return view('admin.index');
 })->name('admin');
 
 
-Route::resource('/admin', AdminController::class)->middleware('rol:admin');
+/* Route::resource('/admin', AdminController::class)->middleware('rol:admin'); */
 
 
-Route::prefix('products')->group(function () {
+/* Route::prefix('products')->group(function () {
     Route::get('index', [ProductController::class, 'index']);
     Route::get('store', [ProductController::class, 'store']);
     Route::get('edit', [ProductController::class, 'edit']);
     Route::get('destroy', [ProductController::class, 'destroy']);
-});
+}); */
 
 Route::get('/errors', function () {
     return view('errors.401');

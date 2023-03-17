@@ -11,6 +11,12 @@ class Product extends Model
 
     protected $filleable = ['nombre', 'descripcion', 'categoria', 'detalles', 'precio', 'visible'];
 
+
+    /*Funcion para definir la relacion y asi obtener solo la imagen principal del Producto en cuestión */
+    public function imagenPrincipal()
+    {
+        return $this->hasOne(Image::class)->where('principal', 1);
+    }
     public function images()
     {
         return $this->hasMany(Image::class);
@@ -37,6 +43,7 @@ class Product extends Model
     {
         return $this->belongsToMany("Size");
     }
+
 
 
 }

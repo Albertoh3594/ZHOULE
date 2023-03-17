@@ -13,13 +13,9 @@ body {
     font-family: 'Poppins';
     margin: 0px;
     background-image: url("../images/login-register/body-bg.webp");
-    height: 100vh;
-    background-repeat: no-repeat;
+    height: 100%;
+    background-repeat: repeat;
     background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
     background-position: center center;
     overflow: hidden;
 }
@@ -341,6 +337,9 @@ input[type=checkbox]:not(old):checked+label>span:before {
 /*Media querie para laptops*/
 
 @media screen and (max-width: 1024px) {
+    body {
+        overflow: visible;
+    }
     .main-login-register {
         display: flex;
         align-items: center;

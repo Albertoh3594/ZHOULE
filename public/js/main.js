@@ -5,63 +5,7 @@ $(document).ready(function() {
     irArriba();
     dropMenuLR();
     enlacesHashtag();
-
-    //obtener el elemento span por el id move
-    let move = document.getElementById("move");
-
-    //flecha para home
-    let home = document.getElementById("home");
-    home.addEventListener("mouseover", () => {
-        move.className = "flecha-navbar";
-        move.style.setProperty("left", "29px");
-    }, false)
-    home.addEventListener("mouseout", () => {
-        move.className = "flecha-navbar";
-    }, false)
-
-    //flecha para equipos
-    let teams = document.getElementById("teams");
-    teams.addEventListener("mouseover", () => {
-        move.className = "flecha-navbar";
-        move.style.setProperty("left", "116px");
-    }, false)
-    teams.addEventListener("mouseout", () => {
-        move.style.setProperty("left", "29px");
-    }, false)
-
-    //flecha para tienda
-    let shop = document.getElementById("shop");
-    shop.addEventListener("mouseover", () => {
-        move.className = "flecha-navbar";
-        move.style.setProperty("left", "210px");
-    }, false)
-    shop.addEventListener("mouseout", () => {
-        move.style.setProperty("left", "29px");
-    }, false)
-
-
-    //flecha para noticias
-    let news = document.getElementById("news");
-    news.addEventListener("mouseover", () => {
-        move.className = "flecha-navbar";
-        move.style.setProperty("left", "306px");
-    }, false)
-    news.addEventListener("mouseout", () => {
-        move.style.setProperty("left", "29px");
-    }, false)
-
-
-    //flecha para sobre nosotros
-    let about = document.getElementById("about");
-    about.addEventListener("mouseover", () => {
-        move.className = "flecha-navbar";
-        move.style.setProperty("left", "430px");
-    }, false)
-    about.addEventListener("mouseout", () => {
-        move.style.setProperty("left", "29px");
-    }, false)
-
-
+    flechaNavbar();
 });
 
 /*Seleccionar todos los enlaces con atributo href que empiecen con el valor "#" y se añade un evento click a cada uno, entonces al hacer click en cualquie enlace se calcela el comportamiento predeterminado que tiene de añadir un # en el enlace*/
@@ -133,4 +77,61 @@ function dropMenuLR() {
             }
         }
     });
+}
+
+function flechaNavbar() {
+    //obtener el elemento span por el id move
+    let move = document.getElementById("move");
+
+    //flecha para home
+    let home = document.getElementById("home");
+    home.addEventListener("mouseover", () => {
+        move.className = "flecha-navbar";
+        move.style.setProperty("left", "29px");
+    }, false)
+    home.addEventListener("mouseout", () => {
+        move.className = "flecha-navbar";
+    }, false)
+
+    //flecha para equipos
+    let teams = document.getElementById("teams");
+    teams.addEventListener("mouseover", () => {
+        move.className = "flecha-navbar";
+        move.style.setProperty("left", "116px");
+    }, false)
+    teams.addEventListener("mouseout", () => {
+        move.style.setProperty("left", "29px");
+    }, false)
+
+    //flecha para tienda
+    let shop = document.getElementById("shop");
+    shop.addEventListener("mouseover", () => {
+        move.className = "flecha-navbar";
+        move.style.setProperty("left", "210px");
+    }, false)
+    shop.addEventListener("mouseout", () => {
+        move.style.setProperty("left", "29px");
+    }, false)
+
+
+    //flecha para noticias
+    let news = document.getElementById("news");
+    news.addEventListener("mouseover", () => {
+        move.className = "flecha-navbar";
+        move.style.setProperty("left", "306px");
+    }, false)
+    news.addEventListener("mouseout", () => {
+        move.style.setProperty("left", "29px");
+    }, false)
+
+
+    //flecha para sobre nosotros
+    let about = document.getElementById("about");
+    about.addEventListener("mouseover", () => {
+        move.className = "flecha-navbar";
+        move.style.setProperty("left", "430px");
+    }, false)
+    about.addEventListener("mouseout", () => {
+        move.style.setProperty("left", "29px");
+    }, false)
 }
