@@ -6,17 +6,28 @@ $(document).ready(function() {
     dropMenuLR();
     enlacesHashtag();
     flechaNavbar();
+    closeMenu();
 });
+
+function closeMenu() {
+    // Inpput del menú
+    let menuToggle = document.getElementById("menuToggle");
+
+    // Si el menú está marcado como "checked", lo cierra poniendole false
+    if (menuToggle.checked) {
+        menuToggle.checked = false;
+    }
+}
 
 /*Seleccionar todos los enlaces con atributo href que empiecen con el valor "#" y se añade un evento click a cada uno, entonces al hacer click en cualquie enlace se calcela el comportamiento predeterminado que tiene de añadir un # en el enlace*/
 
 function enlacesHashtag() {
     $('a[href^="#"]').on('click', function(event) {
-        var enlace = $(this).attr('href');
+        let enlace = $(this).attr('href');
         if (enlace === '#') {
             event.preventDefault();
         } else if (enlace.charAt(0) === '#') {
-            var seccion = $(enlace);
+            let seccion = $(enlace);
             if (seccion.length) {
                 event.preventDefault();
                 event.stopPropagation();
@@ -28,6 +39,8 @@ function enlacesHashtag() {
             event.preventDefault();
         }
     });
+
+
 };
 
 /*Navbar fixed fondo solido*/
@@ -114,22 +127,11 @@ function flechaNavbar() {
     }, false)
 
 
-    //flecha para noticias
-    let news = document.getElementById("news");
-    news.addEventListener("mouseover", () => {
-        move.className = "flecha-navbar";
-        move.style.setProperty("left", "306px");
-    }, false)
-    news.addEventListener("mouseout", () => {
-        move.style.setProperty("left", "29px");
-    }, false)
-
-
     //flecha para sobre nosotros
     let about = document.getElementById("about");
     about.addEventListener("mouseover", () => {
         move.className = "flecha-navbar";
-        move.style.setProperty("left", "430px");
+        move.style.setProperty("left", "330px");
     }, false)
     about.addEventListener("mouseout", () => {
         move.style.setProperty("left", "29px");

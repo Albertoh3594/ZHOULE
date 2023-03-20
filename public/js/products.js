@@ -1,7 +1,7 @@
 $(document).ready(function() {
     flechaNavbar();
     navbarFixed();
-
+    dropMenuLR();
     let offset = $('#product-list > div').length;
     let totalProducts = $('#total-products').data('total-products');
     $('#load-more').click(function(e) {
@@ -17,8 +17,8 @@ $(document).ready(function() {
                 let products = data.products;
                 let baseUrl = window.location.origin;
                 products.forEach(function(product) {
-                    /*console.log(product.imagen_principal.ruta)*/
-                    // Se crea el div con la clase "col-md-6 col-lg-3 col-xl-3"
+                    console.log(product)
+                        // Se crea el div con la clase "col-md-6 col-lg-3 col-xl-3"
                     let productDiv = document.createElement('div');
                     productDiv.classList.add('col-md-6', 'col-lg-3', 'col-xl-3');
 
@@ -41,7 +41,6 @@ $(document).ready(function() {
                     img.alt = 'imagen_principal_' + product.nombre;
                     enlace.appendChild(img);
 
-
                     imgContent.appendChild(enlace);
 
                     // Se crea el div con la clase "text-content"
@@ -57,7 +56,7 @@ $(document).ready(function() {
                     // Se crea el elemento de precio con el precio del producto
                     let price = document.createElement('h4');
                     price.classList.add('product-price');
-                    price.textContent = product.precio;
+                    price.textContent = product.precio + ' €';
                     textContent.appendChild(price);
 
                     // Se agrega los elementos creados a "singleProductDiv"
@@ -81,6 +80,32 @@ $(document).ready(function() {
         });
     });
 });
+
+
+function dropMenuLR() {
+    const dropbtn = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+
+    dropbtn.addEventListener('click', () => {
+        const computedStyle = window.getComputedStyle(dropdownContent);
+        if (computedStyle.getPropertyValue('display') === 'none') {
+            dropdownContent.style.display = 'block';
+        } else {
+            dropdownContent.style.display = 'none';
+        }
+    });
+
+    window.addEventListener('click', (event) => {
+        if (!event.target.matches('.dropbtn')) {
+            const computedStyle = window.getComputedStyle(dropdownContent);
+            if (computedStyle.getPropertyValue('display') === 'block') {
+                dropdownContent.style.display = 'none';
+            }
+        }
+    });
+}
+
 
 /*Navbar fixed fondo solido*/
 function navbarFixed() {
@@ -132,23 +157,11 @@ function flechaNavbar() {
         move.className = "flecha-navbar";
     }, false)
 
-
-    //flecha para noticias
-    let news = document.getElementById("news");
-    news.addEventListener("mouseover", () => {
-        move.className = "flecha-navbar";
-        move.style.setProperty("left", "306px");
-    }, false)
-    news.addEventListener("mouseout", () => {
-        move.style.setProperty("left", "210px");
-    }, false)
-
-
     //flecha para sobre nosotros
     let about = document.getElementById("about");
     about.addEventListener("mouseover", () => {
         move.className = "flecha-navbar";
-        move.style.setProperty("left", "430px");
+        move.style.setProperty("left", "330px");
     }, false)
     about.addEventListener("mouseout", () => {
         move.style.setProperty("left", "210px");

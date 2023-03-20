@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #1a1a1a;
+}
+
+
+/*CABECERA*/
+
+#img-content {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+#img-content img {
+    width: 100%;
+    height: 35vh;
+    -o-object-fit: cover;
+    object-fit: cover;
+    filter: brightness(50%) blur(4px);
+}
+
+#img-content h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-weight: 900;
+    text-shadow: 0 0 0.2em #b18767, 0 0 0.2em #b18767, 0 0 0.2em #b18767;
+    font-size: calc(3em + 3vw);
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.container-team {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5rem;
+}
+
+.info-game {
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 5rem;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/*Tabla de jugadores*/
+
+.player-list-container {
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, .4);
+    max-width: 490px;
+    width: 100%;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    flex: 1;
+}
+
+.player-list-title {
+    --start: 25%;
+    height: 130px;
+    color: #fff;
+    position: relative;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.player-list-title h1 {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: calc(var(--start) * .75);
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 6.5px;
+}
+
+.player-list-title span {
+    display: block;
+}
+
+.player-profiles {
+    background-color: #fff;
+    border-radius: 0 0 12px 12px;
+    padding: 15px 15px 20px;
+    display: grid;
+    row-gap: 8px;
+}
+
+.player-profile {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    padding: 10px 30px 10px 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.player-profile:hover {
+    transform: scale(1.2);
+    box-shadow: 0 9px 47px 11px rgba(51, 51, 51, 0.18);
+}
+
+.player-picture {
+    max-width: 100%;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.player-name {
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.64px;
+    margin-left: 12px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .content-img {
+        display: none;
+    }
+}

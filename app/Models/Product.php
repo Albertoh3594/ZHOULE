@@ -34,14 +34,50 @@ class Product extends Model
 
     //Relacion Ternaria con Color y Talla
 
-    public function colors()
+    public function productSizeColors()
     {
-        return $this->belongsToMany("Color");
+        return $this->hasMany(Product_size_color::class);
     }
 
-    public function sizes()
+    /*Funcion para devuelva los colores únicos del producto y el color que se seleccionó previamente*/
+    public function getUniqueColors($selectedColor = null)
     {
-        return $this->belongsToMany("Size");
+        $uniqueColors = $this->productSizeColors->unique('color_id')->pluck('color');
+
+        $data = [];
+
+        foreach ($uniqueColors as $color) {
+            $data[] = [
+                'id' => $color->id,
+                'nombre' => $color->nombre,
+                'selected' => ($selectedColor == $color->id) ? true : false,
+            ];
+        }
+
+        return $data;
+    }
+
+    /*Funcion para devuelva las tallas Unicas del producto y la talla que se seleccionó previamente*/
+    public function getUniqueSizes($selectedSize = null)
+    {
+        $uniqueSizes = $this->productSizeColors->unique('size_id')->pluck('size');
+
+        $data = [];
+
+        foreach ($uniqueSizes as $size) {
+            $data[] = [
+                'id' => $size->id,
+                'nombre' => $size->nombre,
+                'selected' => ($selectedSize == $size->id) ? true : false,
+            ];
+        }
+
+        return $data;
+    }
+
+    public function colorsAndSizes()
+    {
+        return $this->belongsToMany(Color::class)->withPivot('size_id')->withPivot('product_id');
     }
 
 

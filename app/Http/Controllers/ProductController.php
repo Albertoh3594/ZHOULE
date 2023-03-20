@@ -16,7 +16,7 @@ class ProductController extends Controller
     {
         $offset = $request->input('offset', 0);
         $products = Product::with('imagenPrincipal')->skip($offset)->take(6)->get();
-        /* dd($products); */
+        /*dd($products);*/
         $totalProducts = Product::count();
 
         return view('productos.index', compact('products', 'totalProducts', 'offset'));
@@ -62,10 +62,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        $product = Product::find($id);
-        return view('productos.show', ['product' => $product]);
+        $product = Product::with(['productSizeColors.size', 'productSizeColors.color'])->find($id);
+        $uniqueColors = $product->getUniqueColors($request->input('color_id'));
+        $uniqueSizes = $product->getUniqueSizes($request->input('size_id'));
+        return view('productos.show', compact('product', 'uniqueColors', 'uniqueSizes'));
     }
 
     /**

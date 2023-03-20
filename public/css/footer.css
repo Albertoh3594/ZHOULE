@@ -14,7 +14,7 @@ footer {
 }
 
 .logo {
-    height: 80px;
+    width: 80px !important;
     margin-bottom: 1rem;
 }
 
@@ -60,13 +60,13 @@ footer {
     list-style-type: none;
     color: #fff;
     font-size: 18px;
-    font-family: Oswald;
+    font-family: 'Oswald', sans-serif;
 }
 
 .menu-item {
     margin: 1rem 1.5rem;
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .menu-item:hover {
@@ -75,7 +75,7 @@ footer {
 
 .copyright {
     color: #fff;
-    opacity: 0.3;
+    opacity: 0.5;
     text-align: center;
-    font-family: Oswald;
+    font-family: 'Oswald', sans-serif;
 }

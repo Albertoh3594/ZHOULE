@@ -23,7 +23,7 @@
         <div class="slide">
             <div class="contenido">
                 <h1>ZHOULE TEAM</h1>
-                <p>Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has been the industry’s standard dummy. Lorem Ipsum has been the industry’s standard dummy.</p>
+                <p>¡Hola! Somos ZHOULE TEAM, un equipo de esports recién fundado. Estamos compuestos por un grupo de apasionados por los videojuegos y la competición. Nuestra misión es convertirnos en uno de los equipos de esports más destacados del panorama internacional, y para ello trabajamos duro cada día.</p>
                 <a href="#contenido-area" class="flecha-slider" title="Flecha para bajar al contenido"></a>
             </div>
             <img src="{{asset("/images/home/slider-1.webp")}}" alt="foto1">
@@ -31,7 +31,7 @@
         <div class="slide">
             <div class="contenido">
                 <h1>ZHOULE TEAM</h1>
-                <p>Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has been the industry’s standard dummy. Lorem Ipsum has been the industry’s standard dummy.</p>
+                <p>¡Hola! Somos ZHOULE TEAM, un equipo de esports recién fundado. Estamos compuestos por un grupo de apasionados por los videojuegos y la competición. Nuestra misión es convertirnos en uno de los equipos de esports más destacados del panorama internacional, y para ello trabajamos duro cada día.</p>
                 <a href="#contenido-area" class="flecha-slider" title="Flecha para bajar al contenido"></a>
             </div>
             <img src="{{asset("/images/home/slider-2.webp")}}" alt="foto2">
@@ -39,7 +39,7 @@
         <div class="slide">
             <div class="contenido">
                 <h1>ZHOULE TEAM</h1>
-                <p>Lorem ipsum is simply dummy text of the printing and typesetting. Lorem Ipsum has been the industry’s standard dummy. Lorem Ipsum has been the industry’s standard dummy.</p>
+                <p>¡Hola! Somos ZHOULE TEAM, un equipo de esports recién fundado. Estamos compuestos por un grupo de apasionados por los videojuegos y la competición. Nuestra misión es convertirnos en uno de los equipos de esports más destacados del panorama internacional, y para ello trabajamos duro cada día.</p>
                 <a href="#contenido-area" class="flecha-slider" title="Flecha para bajar al contenido"></a>
             </div>
             <img src="{{asset("/images/home/slider-3.webp")}}" alt="foto3">
@@ -54,76 +54,69 @@
     </a>
 
     <div id="contenido-area">
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
-        <p>hola</p>
+            <div id="noticias-section">
 
-    </div>
-    <div class="carrousel-sponsors">
-        <div class="carrousel-content">
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/amd-Logo.webp')}}" alt="logo-amd">
             </div>
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/audi-Logo.webp')}}" alt="logo-audi">
-            </div>
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/Logitech-Logo.webp')}}" alt="logo-logitech">
-            </div>
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/Nike-Logo.webp')}}" alt="logo-nike">
-            </div>
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/Secretlab-Logo.webp')}}" alt="logo-secretlab">
-            </div>
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/Cocacola-Logo.webp')}}" alt="cocacola-logo">
-            </div>
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/Ford-Logo.webp')}}" alt="ford-logo">
-            </div>
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/amd-Logo.webp')}}" alt="logo-amd">
-            </div>
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/audi-Logo.webp')}}" alt="logo-audi">
-            </div>
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/Logitech-Logo.webp')}}" alt="logo-logitech">
-            </div>
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/Nike-Logo.webp')}}" alt="logo-nike">
-            </div>
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/Secretlab-Logo.webp')}}" alt="logo-secretlab">
-            </div>
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/Cocacola-Logo.webp')}}" alt="cocacola-logo">
-            </div>
-            <div class="carrousel-item">
-                <img src="{{asset('../images/sponsors/Ford-Logo.webp')}}" alt="ford-logo">
+
+        <div id="teams-section">
+                <div class="teamsSectionContainer">
+                    <h2 class="teamsSectionTitle">NUESTROS EQUIPOS</h2>
+                    <h4 class="teamsSectionSubTitle">Conoce a nuestros jugadores</h4>
+                    <div class="teamsContainer">
+                        @foreach ($teams as $team)
+                        <div class="teamContainer">
+                            <a href="{{ route('team', ['id' => $team->id]) }}"><img src="{{ asset('/images/teams/'. $team->game->nombre . '.webp') }}" alt="imagen_{{$team->game->nombre}}" class="teamBackgroundImage" style="height: 100%; width: 100%;"></a>
+                            <p class="nameTeam">{{$team->game->nombre}}</p>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+        </div>
+
+        <div class="carrousel-sponsors">
+            <div class="carrousel-content">
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/amd-Logo.webp')}}" alt="logo-amd" style="height: auto; width: auto">
+                </div>
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/audi-Logo.webp')}}" alt="logo-audi" style="height: auto; width: auto">
+                </div>
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/Logitech-Logo.webp')}}" alt="logo-logitech" style="height: auto; width: auto">
+                </div>
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/Nike-Logo.webp')}}" alt="logo-nike" style="height: auto; width: auto">
+                </div>
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/Secretlab-Logo.webp')}}" alt="logo-secretlab" style="height: auto; width: auto">
+                </div>
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/Cocacola-Logo.webp')}}" alt="cocacola-logo" style="height: auto; width: auto">
+                </div>
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/Ford-Logo.webp')}}" alt="ford-logo" style="height: auto; width: auto">
+                </div>
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/amd-Logo.webp')}}" alt="logo-amd" style="height: auto; width: auto">
+                </div>
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/audi-Logo.webp')}}" alt="logo-audi" style="height: auto; width: auto">
+                </div>
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/Logitech-Logo.webp')}}" alt="logo-logitech" style="height: auto; width: auto">
+                </div>
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/Nike-Logo.webp')}}" alt="logo-nike" style="height: auto; width: auto">
+                </div>
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/Secretlab-Logo.webp')}}" alt="logo-secretlab" style="height: auto; width: auto">
+                </div>
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/Cocacola-Logo.webp')}}" alt="cocacola-logo" style="height: auto; width: auto">
+                </div>
+                <div class="carrousel-item">
+                    <img src="{{asset('../images/sponsors/Ford-Logo.webp')}}" alt="ford-logo" style="height: auto; width: auto">
+                </div>
             </div>
         </div>
     </div>

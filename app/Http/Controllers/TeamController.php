@@ -44,10 +44,14 @@ class TeamController extends Controller
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function show(Team $team)
+    public function show(Request $request, $id)
     {
-        //
+        $team = Team::with(['game' , 'users'])->find($id);
+        /*dd($team);*/
+        return view('teams.show', ['team' => $team]);
+
     }
+
 
     /**
      * Show the form for editing the specified resource.

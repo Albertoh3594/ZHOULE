@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +19,12 @@ use App\Http\Controllers\ProductController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/', [HomeController::class, 'index'])->name('index');
+
+Route::get('/sobre-nosotros', function () {
+    return view('about');
+})->name('about');
+
 /*
 Route::resource('/admin', function(){
     if (Auth::check() && Auth::user()->rol == "admin") {
@@ -36,12 +41,15 @@ Route::get('/productos/data', 'App\Http\Controllers\ProductController@getProduct
 Route::get('/producto/{id}', [ProductController::class, 'show'])->name('producto');
 
 
+Route::get('/team/{id}', [TeamController::class, 'show'])->name('team');
+
+
 Route::get('/admin', function () {
     return view('admin.index');
 })->name('admin');
 
 
-/* Route::resource('/admin', AdminController::class)->middleware('rol:admin'); */
+Route::resource('/admin', AdminController::class)->middleware('rol:admin');
 
 
 /* Route::prefix('products')->group(function () {

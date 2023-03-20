@@ -31,7 +31,7 @@
                     <div class="col-md-6 col-lg-3 col-xl-3">
                             <div class="single-product">
                                     <div class="img-content">
-                                        <a href="{{ route('producto', ['id' => $product->id]) }}"><img src="{{ $product->imagenPrincipal->ruta }}" alt="imagen"></a>
+                                        <a href="{{ route('producto', ['id' => $product->id]) }}"><img src="{{ asset($product->imagenPrincipal->ruta) }}" alt="imagen"></a>
                                     </div>
                                     <div class="text-content">
                                             <h3 class="product-title">{{ $product->nombre }}</h3>
@@ -46,8 +46,6 @@
     @if (count($products) < $totalProducts)
             <button id="load-more" data-offset="{{ $offset }}"><span>Ver más</span></button>
             <input type="hidden" id="total-products" data-total-products="{{ $totalProducts }}">
-    @else
-        <button disabled>No hay más productos</button>
     @endif
 </div>
 @endsection

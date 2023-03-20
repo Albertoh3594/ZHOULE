@@ -8,15 +8,14 @@
                 <div class="open"></div>
             </label>
 
-            <div class="menu menuEffects" id="overlay-verde">
+            <div class="menu menuEffects" id="menu-toggle">
                 <label for="menuToggle"></label>
                 <div class="menuContent">
                     <ul>
                         <li><a href="{{route('index')}}">HOME</a></li>
-                        <li> <a href="teams.html">EQUIPOS</a></li>
-                        <li><a href="#tienda-area">TIENDA</a></li>
-                        <li><a href="{{route('productos')}}">NOTICIAS</a></li>
-                        <li><a href="#about-area">SOBRE NOSOTROS</a></li>
+                        <li><a href="{{route('index')}}#teams-section" onclick="closeMenu()">EQUIPOS</a></li>
+                        <li><a href="{{route('productos')}}">TIENDA</a></li>
+                        <li><a href="{{route('about')}}">SOBRE NOSOTROS</a></li>
                     </ul>
                 </div>
             </div>
@@ -27,19 +26,18 @@
                     <span id="move" class="flecha-navbar"></span>
                     <li id="home"><a href="{{route('index')}}">HOME</a></li>
                     <li class="nav-item" id="teams">
-                        <a href="#teams-area" class="dropdown-toggle" data-toggle="dropdown">EQUIPOS</a>
+                        <a href="{{route('index')}}#teams-section" class="dropdown-toggle" data-toggle="dropdown">EQUIPOS</a>
                         <div class="dropdown-menu" id="equipos_drop">
 
                         </div>
                     </li>
                     <li id="shop"><a href="{{route('productos')}}">TIENDA</a></li>
-                    <li id="news"><a href="#news-area" >NOTICIAS</a></li>
-                    <li id="about"><a href="#about-area">SOBRE NOSOTROS</a></li>
+                    <li id="about"><a href="{{route('about')}}">SOBRE NOSOTROS</a></li>
                 </ul>
             </div>
         </nav>
         <div class="logo-medio">
-            <a href="#"><img src="{{asset('images/Logo.png')}}" alt="logo" id="logo1"></a>
+            <a href="#"><img src="{{asset('images/Logo.png')}}" alt="logo" id="logo1" style="height: auto; width: auto"></a>
         </div>
         <div class="container-iconos">
             <div>

@@ -9,14 +9,10 @@ class Size extends Model
 {
     use HasFactory;
 
-    public function colors()
-    {
-        return $this->belongsToMany("Color");
-    }
-
-    // Esta relacion es opcional
     public function products()
     {
-    return $this->belongsToMany("Product", 'Product_size_color');
+        return $this->belongsToMany(Product::class, 'product_size_color')
+                    ->withPivot('color_id')
+                    ->withTimestamps();
     }
 }
