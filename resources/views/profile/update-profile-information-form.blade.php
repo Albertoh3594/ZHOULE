@@ -44,7 +44,7 @@
                 <x-jet-secondary-button class="mt-2 me-2" type="button" x-on:click.prevent="$refs.photo.click()">
                     {{ __('Select A New Photo') }}
 				</x-jet-secondary-button>
-				
+
 				@if ($this->user->profile_photo_path)
                     <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
                         <div wire:loading wire:target="deleteProfilePhoto" class="spinner-border spinner-border-sm" role="status">
@@ -62,9 +62,9 @@
         <div class="w-md-75">
             <!-- Name -->
             <div class="mb-3">
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}" wire:model.defer="state.name" autocomplete="name" />
-                <x-jet-input-error for="name" />
+                <x-jet-label for="nombre" value="{{ __('Nombre') }}" />
+                <x-jet-input id="nombre" type="text" class="{{ $errors->has('nombre') ? 'is-invalid' : '' }}" wire:model.defer="state.nombre" autocomplete="nombre" />
+                <x-jet-input-error for="nombre" />
             </div>
 
             <!-- Email -->
@@ -79,9 +79,9 @@
     <x-slot name="actions">
 		<div class="d-flex align-items-baseline">
 			<x-jet-button>
-                <div wire:loading class="spinner-border spinner-border-sm" role="status">
+                {{-- <div wire:loading class="spinner-border spinner-border-sm" role="status">
                     <span class="visually-hidden">Loading...</span>
-                </div>
+                </div> --}}
 
 				{{ __('Save') }}
 			</x-jet-button>

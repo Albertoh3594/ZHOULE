@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom sticky-top">
     <div class="container">
         <!-- Logo -->
-        <a href="{{route('index')}}"><img src="{{asset('images/Logo.png')}}" alt="logo" id="logo"></a>
+        <a href="{{route('index')}}"><img src="{{asset('images/Logo.png')}}" alt="logo" id="logo" width="80px"></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
