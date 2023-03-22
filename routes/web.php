@@ -21,19 +21,7 @@ use App\Http\Controllers\HomeController;
 */
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
-Route::get('/sobre-nosotros', function () {
-    return view('about');
-})->name('about');
-
-/*
-Route::resource('/admin', function(){
-    if (Auth::check() && Auth::user()->rol == "admin") {
-        AdminController
-    }else {
-        return Redirect::route('index');
-    }
-});
-*/
+Route::get('/team/{id}', [TeamController::class, 'show'])->name('team');
 
 Route::get('/productos', [ProductController::class, 'index'])->name('productos');
 Route::get('/productos/data', 'App\Http\Controllers\ProductController@getProducts');
@@ -41,15 +29,17 @@ Route::get('/productos/data', 'App\Http\Controllers\ProductController@getProduct
 Route::get('/producto/{id}', [ProductController::class, 'show'])->name('producto');
 
 
-Route::get('/team/{id}', [TeamController::class, 'show'])->name('team');
+Route::get('/sobre-nosotros', function () {
+    return view('about');
+})->name('about');
 
-
+/*
 Route::get('/admin', function () {
     return view('admin.index');
 })->name('admin');
 
 
-Route::resource('/admin', AdminController::class)->middleware('rol:admin');
+Route::resource('/admin', AdminController::class)->middleware('rol:admin'); */
 
 
 /* Route::prefix('products')->group(function () {

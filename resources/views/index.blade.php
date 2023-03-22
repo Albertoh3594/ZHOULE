@@ -65,8 +65,8 @@
                     <div class="teamsContainer">
                         @foreach ($teams as $team)
                         <div class="teamContainer">
-                            <a href="{{ route('team', ['id' => $team->id]) }}"><img src="{{ asset('/images/teams/'. $team->game->nombre . '.webp') }}" alt="imagen_{{$team->game->nombre}}" class="teamBackgroundImage" style="height: 100%; width: 100%;"></a>
-                            <p class="nameTeam">{{$team->game->nombre}}</p>
+                            <a href="{{ route('team', ['id' => $team->id]) }}"><img src="{{ asset('/images/teams/'. $team->game->name . '.webp') }}" alt="imagen_{{$team->game->name}}" class="teamBackgroundImage" style="height: 100%; width: 100%;"></a>
+                            <p class="nameTeam">{{$team->game->name}}</p>
                         </div>
                         @endforeach
                     </div>

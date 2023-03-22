@@ -17,13 +17,22 @@
 @endsection
 
 @section('contenido')
+
+    <!-- Boton hacia arriba -->
+    <a href="#" class="ir-arriba"title="Volver arriba">
+        <span class="fa-stack">
+            <span class="fa fa-circle fa-stack-2x"></span>
+            <span class="fa fa-arrow-up fa-stack-1x fa-inverse"></span>
+        </span>
+    </a>
+
     <div id="img-content">
-        <img src="{{ asset('/images/teams/'. $team->game->nombre . '.webp') }}" alt="imagen_{{$team->game->nombre}}" class="teamBackgroundImage">
-        <h1 class="texto">{{$team->game->nombre}}</h1>
+        <img src="{{ asset('/images/teams/'. $team->game->name . '.webp') }}" alt="imagen_{{$team->game->name}}" class="teamBackgroundImage">
+        <h1 class="texto">{{$team->game->name}}</h1>
     </div>
 
     <div class="container-team">
-        <p class="info-game">{{$team->game->descripcion}}</p>
+        <p class="info-game">{{$team->game->description}}</p>
         <div id="content">
             <div class="player-list-container">
                 <div class="player-list-title">
@@ -34,7 +43,7 @@
                     @foreach ($team->users as $user)
                     <div class="player-profile">
                         <img src="{{asset('images/logo.png')}}" alt="image_profile_" class="player-picture">
-                        <span class="player-name">{{$user->nombre}}</span></a>
+                        <span class="player-name">{{$user->name}}</span></a>
                     </div>
                     @endforeach
                 </div>

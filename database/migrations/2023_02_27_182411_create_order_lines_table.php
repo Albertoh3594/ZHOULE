@@ -19,8 +19,8 @@ class CreateOrderLinesTable extends Migration
             //table->unsignedBigInteger('order_id');
             //$table->unsignedBigInteger('product_id');
 
-            $table->float('precio', 4, 2);
-            $table->integer('cantidad');
+            $table->float('price', 4, 2);
+            $table->integer('amount');
 
             $table->foreignId('order_id')->references('id')->on('orders')->delete('cascade');
             $table->foreignId('product_id')->references('id')->on('products')->delete('cascade');

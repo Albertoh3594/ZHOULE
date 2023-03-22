@@ -2,6 +2,8 @@ $(document).ready(function() {
     flechaNavbar();
     navbarFixed();
     dropMenuLR();
+    irArriba();
+
     let offset = $('#product-list > div').length;
     let totalProducts = $('#total-products').data('total-products');
     $('#load-more').click(function(e) {
@@ -37,8 +39,8 @@ $(document).ready(function() {
 
                     // Se crea el elemento de imagen con la ruta de la imagen principal
                     let img = document.createElement('img');
-                    img.src = product.imagen_principal.ruta;
-                    img.alt = 'imagen_principal_' + product.nombre;
+                    img.src = product.imagen_principal.route;
+                    img.alt = 'imagen_principal_' + product.name;
                     enlace.appendChild(img);
 
                     imgContent.appendChild(enlace);
@@ -50,13 +52,13 @@ $(document).ready(function() {
                     // Se crea el elemento de título con el nombre del producto
                     let title = document.createElement('h3');
                     title.classList.add('product-title');
-                    title.textContent = product.nombre;
+                    title.textContent = product.name;
                     textContent.appendChild(title);
 
                     // Se crea el elemento de precio con el precio del producto
                     let price = document.createElement('h4');
                     price.classList.add('product-price');
-                    price.textContent = product.precio + ' €';
+                    price.textContent = product.price + ' €';
                     textContent.appendChild(price);
 
                     // Se agrega los elementos creados a "singleProductDiv"
@@ -81,6 +83,13 @@ $(document).ready(function() {
     });
 });
 
+function irArriba() {
+    $('.ir-arriba').click(function() { $('body,html').animate({ scrollTop: '0px' }, 1000); });
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) { $('.ir-arriba').slideDown(600); } else { $('.ir-arriba').slideUp(600); }
+    });
+    $('.ir-abajo').click(function() { $('body,html').animate({ scrollTop: '1000px' }, 1000); });
+};
 
 function dropMenuLR() {
     const dropbtn = document.querySelector('.dropbtn');

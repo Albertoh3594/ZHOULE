@@ -18,6 +18,14 @@
 
 @section('contenido')
 
+<!-- Boton hacia arriba -->
+<a href="#" class="ir-arriba"title="Volver arriba">
+    <span class="fa-stack">
+        <span class="fa fa-circle fa-stack-2x"></span>
+        <span class="fa fa-arrow-up fa-stack-1x fa-inverse"></span>
+    </span>
+</a>
+
 <div id="img-content">
     <img src="images/products/cabecera-productos.webp" alt="cabecera productos">
     <h1 class="texto">PRODUCTOS</h1>
@@ -31,11 +39,11 @@
                     <div class="col-md-6 col-lg-3 col-xl-3">
                             <div class="single-product">
                                     <div class="img-content">
-                                        <a href="{{ route('producto', ['id' => $product->id]) }}"><img src="{{ asset($product->imagenPrincipal->ruta) }}" alt="imagen"></a>
+                                        <a href="{{ route('producto', ['id' => $product->id]) }}"><img src="{{ asset($product->imagenPrincipal->route) }}" alt="imagen_{{$product->name}}"></a>
                                     </div>
                                     <div class="text-content">
-                                            <h3 class="product-title">{{ $product->nombre }}</h3>
-                                            <h4 class="product-price">{{ $product->precio }} €</h4>
+                                            <h3 class="product-title">{{ $product->name }}</h3>
+                                            <h4 class="product-price">{{ $product->price }} €</h4>
                                     </div>
                             </div>
                     </div>

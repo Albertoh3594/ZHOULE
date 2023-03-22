@@ -15,8 +15,8 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('fecha_hora_entrenamiento')->nullable();
-            $table->dateTime('fecha_hora_competicion')->nullable();
+            $table->dateTime('date_time_training')->nullable();
+            $table->dateTime('date_time_competition')->nullable();
             $table->timestamps();
 
             //$table->unsignedBigInteger('game_id');

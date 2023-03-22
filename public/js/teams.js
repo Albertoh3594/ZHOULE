@@ -1,6 +1,7 @@
 $(document).ready(function() {
     flechaNavbar();
     dropMenuLR();
+    irArriba();
 });
 
 function dropMenuLR() {
@@ -27,6 +28,13 @@ function dropMenuLR() {
     });
 }
 
+function irArriba() {
+    $('.ir-arriba').click(function() { $('body,html').animate({ scrollTop: '0px' }, 1000); });
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) { $('.ir-arriba').slideDown(600); } else { $('.ir-arriba').slideUp(600); }
+    });
+    $('.ir-abajo').click(function() { $('body,html').animate({ scrollTop: '1000px' }, 1000); });
+};
 
 function flechaNavbar() {
     //obtener el elemento span por el id move

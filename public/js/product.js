@@ -1,11 +1,12 @@
 $(document).ready(function() {
     flechaNavbar()
     dropMenuLR();
+    irArriba();
 
     let image = document.getElementsByClassName('image')
     let activeImages = document.getElementsByClassName('active')
 
-    for (var i = 0; i < image.length; i++) {
+    for (let i = 0; i < image.length; i++) {
 
         image[i].addEventListener('mouseover', function() {
             console.log(this);
@@ -40,6 +41,14 @@ $(document).ready(function() {
 
 
 });
+
+function irArriba() {
+    $('.ir-arriba').click(function() { $('body,html').animate({ scrollTop: '0px' }, 1000); });
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) { $('.ir-arriba').slideDown(600); } else { $('.ir-arriba').slideUp(600); }
+    });
+    $('.ir-abajo').click(function() { $('body,html').animate({ scrollTop: '1000px' }, 1000); });
+};
 
 function dropMenuLR() {
     const dropbtn = document.querySelector('.dropbtn');

@@ -4,7 +4,7 @@ teams().then(response => {
     teamsArray.forEach(team => {
         let link = document.createElement('a');
         link.href = `/team/${team.id}`;
-        link.textContent = `${team.nombre}`;
+        link.textContent = `${team.name}`;
         teamsDrop.append(link);
     });
 

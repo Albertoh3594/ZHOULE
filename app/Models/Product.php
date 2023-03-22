@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $filleable = ['nombre', 'descripcion', 'categoria', 'detalles', 'precio', 'visible'];
+    protected $filleable = ['name', 'descripcion', 'categoria', 'detalles', 'precio', 'visible'];
 
 
     /*Funcion para definir la relacion y asi obtener solo la imagen principal del Producto en cuestión */
@@ -49,7 +49,7 @@ class Product extends Model
         foreach ($uniqueColors as $color) {
             $data[] = [
                 'id' => $color->id,
-                'nombre' => $color->nombre,
+                'name' => $color->name,
                 'selected' => ($selectedColor == $color->id) ? true : false,
             ];
         }
@@ -67,7 +67,7 @@ class Product extends Model
         foreach ($uniqueSizes as $size) {
             $data[] = [
                 'id' => $size->id,
-                'nombre' => $size->nombre,
+                'name' => $size->name,
                 'selected' => ($selectedSize == $size->id) ? true : false,
             ];
         }

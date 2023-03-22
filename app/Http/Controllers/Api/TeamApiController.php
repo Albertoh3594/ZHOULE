@@ -66,7 +66,7 @@ class TeamApiController extends Controller
 
     public function navTeams()
     {
-        $teams = DB::select('SELECT id, nombre FROM games');
+        $teams = DB::select('SELECT id, name FROM games');
         return response()->json($teams, 200);
     }
 }

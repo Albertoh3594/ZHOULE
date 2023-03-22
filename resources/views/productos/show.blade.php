@@ -18,19 +18,27 @@
 
 @section('contenido')
 
+<!-- Boton hacia arriba -->
+<a href="#" class="ir-arriba"title="Volver arriba">
+    <span class="fa-stack">
+        <span class="fa fa-circle fa-stack-2x"></span>
+        <span class="fa fa-arrow-up fa-stack-1x fa-inverse"></span>
+    </span>
+</a>
+
 <div class="container-product">
 
     <div class="images-container">
         <div class="images-content">
-			<img id=principal src="{{ asset($product->images[0]->ruta) }}" alt="principal_{{$product->nombre}}">
+			<img id=principal src="{{ asset($product->images[0]->route) }}" alt="principal_{{$product->name}}">
 
 			<div id="slide-wrapper" >
                 <img id="slideLeft" class="arrow" src="{{asset('images/products/arrow-left.webp')}}" alt="flecha_slider_izquierda">
 				<div id="slider">
-					<img class="image active" src="{{ asset($product->images[0]->ruta) }}" alt="image_slider_{{$product->nombre}}_1" >
-					<img class="image" src="{{ asset($product->images[1]->ruta) }}" alt="image_slider_{{$product->nombre}}_2">
-					<img class="image" src="{{ asset($product->images[2]->ruta) }}" alt="image_slider_{{$product->nombre}}_3">
-                    <img class="image" src="{{ asset($product->images[3]->ruta) }}" alt="image_slider_{{$product->nombre}}_4">
+					<img class="image active" src="{{ asset($product->images[0]->route) }}" alt="image_slider_{{$product->name}}_1" >
+					<img class="image" src="{{ asset($product->images[1]->route) }}" alt="image_slider_{{$product->name}}_2">
+					<img class="image" src="{{ asset($product->images[2]->route) }}" alt="image_slider_{{$product->name}}_3">
+                    <img class="image" src="{{ asset($product->images[3]->route) }}" alt="image_slider_{{$product->name}}_4">
 				</div>
                 <img id="slideRight" class="arrow" src="{{asset('images/products/arrow-right.webp')}}" alt="flecha_slider_derecha">
 			</div>
@@ -40,9 +48,9 @@
     <div class="info-container">
 
       <div class="product-description">
-        <span> {{ $product->categoria }}</span>
-        <h1>{{ $product->nombre }}</h1>
-        <p> {{ $product->descripcion }}</p>
+        <span> {{ $product->category }}</span>
+        <h1>{{ $product->name }}</h1>
+        <p> {{ $product->description }}</p>
       </div>
 
 
@@ -50,14 +58,14 @@
        <div class="product-configuration">
 
             <div class="product-color">
-                @if (count($uniqueColors) == 1 && $uniqueColors[0]['nombre'] == 'Unico')
-                    <span>Color: {{$uniqueColors[0]['nombre']}}</span>
+                @if (count($uniqueColors) == 1 && $uniqueColors[0]['name'] == 'Unico')
+                    <span>Color: {{$uniqueColors[0]['name']}}</span>
                 @else
                     <p>Color:</p>
                     @foreach ($uniqueColors as $key => $color)
                         <div class="color-choose">
                             <div>
-                                <input data-image="{{$color['nombre']}}" type="radio" id="color_{{$color['id']}}" name="color_id" value="{{$color['id']}}" {{($color['selected'] || $key === 0) ? 'checked' : ''}}>
+                                <input data-image="{{$color['name']}}" type="radio" id="color_{{$color['id']}}" name="color_id" value="{{$color['id']}}" {{($color['selected'] || $key === 0) ? 'checked' : ''}}>
                                 <label for="color_{{$color['id']}}" class="color-label color-label-{{$color['id']}}"><span></span></label>
                             </div>
                         </div>
@@ -67,15 +75,15 @@
             </div>
 
             <div class="product-size">
-                @if (count($uniqueSizes) == 1 && $uniqueSizes[0]['nombre'] == 'Unica')
-                    <span>Talla: {{$uniqueSizes[0]['nombre']}}</span>
+                @if (count($uniqueSizes) == 1 && $uniqueSizes[0]['name'] == 'Unica')
+                    <span>Talla: {{$uniqueSizes[0]['name']}}</span>
                 @else
                     <p>Talla:</p>
                     @foreach ($uniqueSizes as $key => $size)
                         <div class="size-choose">
                             <div>
-                                <input data-image="{{$size['nombre']}}" type="radio" id="size_{{$size['id']}}" name="size_id" value="{{$size['id']}}" {{($size['selected'] || $key === 0) ? 'checked' : ''}}>
-                                <label for="size_{{$size['id']}}" class="size-label size-label-{{$size['id']}}"><span>{{$size['nombre']}}</span></label>
+                                <input data-image="{{$size['name']}}" type="radio" id="size_{{$size['id']}}" name="size_id" value="{{$size['id']}}" {{($size['selected'] || $key === 0) ? 'checked' : ''}}>
+                                <label for="size_{{$size['id']}}" class="size-label size-label-{{$size['id']}}"><span>{{$size['name']}}</span></label>
                             </div>
                         </div>
                     @endforeach
@@ -85,7 +93,7 @@
       </div>
 
       <div class="product-price">
-        <span> {{$product->precio}} €</span>
+        <span> {{$product->price}} €</span>
         <a href="#" class="cart-btn">Añadir al carrito</a>
       </div>
     </div>

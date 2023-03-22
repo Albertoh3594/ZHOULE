@@ -15,12 +15,12 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('n_pedido')->unique();
-            $table->dateTime('fecha_hora_creacion');
-            $table->dateTime('fecha_hora_envio')->nullable();
+            $table->integer('n_order')->unique();
+            $table->dateTime('date_time_creation');
+            $table->dateTime('date_time_sent')->nullable();
             //table->dateTime('fecha_hora_entregado')->nullable();
-            $table->string('observaciones')->nullable();
-            $table->string('estado', 20);
+            $table->string('observations')->nullable();
+            $table->string('status', 20);
             $table->timestamps();
 
             //$table->unsignedBigInteger('user_id');
