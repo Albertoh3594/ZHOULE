@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -12,6 +13,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    use CrudTrait;
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
@@ -19,20 +21,6 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
 
 
-    public function team()
-    {
-        return $this->belongsTo(Team::class);
-    }
-
-    public function orders()
-    {
-        return $this->hasMany(Order::class);
-    }
-
-    public function products()
-    {
-        return $this->belongsToMany(Product::class, 'Comment');
-    }
 
     /**
      * The attributes that are mass assignable.
@@ -44,6 +32,17 @@ class User extends Authenticatable
         'surname',
         'email',
         'password',
+        'birthday',
+        'role',
+        'phone',
+        'location',
+        'province',
+        'street',
+        'floor',
+        'postal_code',
+        'discount',
+
+
     ];
 
     /**
@@ -75,4 +74,21 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'Comment');
+    }
+
+
 }

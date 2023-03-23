@@ -2,14 +2,16 @@
 
 namespace App\Models;
 
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    use CrudTrait;
     use HasFactory;
 
-    protected $filleable = ['name', 'descripcion', 'categoria', 'detalles', 'precio', 'visible'];
+    protected $fillable = ['name', 'description', 'category', 'datails', 'price', 'visible'];
 
 
     /*Funcion para definir la relacion y asi obtener solo la imagen principal del Producto en cuestión */

@@ -19,12 +19,12 @@
                             <x-jet-input-error for="email"></x-jet-input-error>
                         </div>
                         <div class="form-group">
-                            <input id="nombre" class="form-input" type="text" name="nombre" value="{{old('nombre')}}" placeholder="Nombre" required  autocomplete="nombre" />
-                            <x-jet-input-error for="nombre"></x-jet-input-error>
+                            <input id="name" class="form-input" type="text" name="name" value="{{old('name')}}" placeholder="Nombre" required  autocomplete="name" />
+                            <x-jet-input-error for="name"></x-jet-input-error>
                         </div>
                         <div class="form-group">
-                            <input id="apellidos" class="form-input" type="text" name="apellidos" value="{{old('apellidos')}}" placeholder="Apellidos" required  autocomplete="apellidos" />
-                            <x-jet-input-error for="apellidos"></x-jet-input-error>
+                            <input id="surname" class="form-input" type="text" name="surname" value="{{old('surname')}}" placeholder="Apellidos" required  autocomplete="surname" />
+                            <x-jet-input-error for="surname"></x-jet-input-error>
                         </div>
                         <div class="form-group">
                             <input id="password" class="form-input" type="password" name="password" placeholder="Contraseña" required autocomplete="new-password" />
@@ -38,19 +38,15 @@
                                 {{ $message }}
                             @enderror
                         </div>
+
                         <div class="form-group">
                             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                                <x-jet-checkbox id="terms" name="terms" />
-                                <label class="custom-control-label" for="terms">
-                                    {!! __('He leído los :terms_of_service y :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="' . route('terms.show') . '">' . __('Terminos') . '</a>',
-                                        'privacy_policy' => '<a target="_blank" href="' . route('policy.show') . '">' . __('Condiciones') . '</a>',
-                                    ]) !!}
-                                </label>
+                                <input type="checkbox" id="terms" name="terms" required />
+                                <label for="terms" class="label-terms"><span><span></span></span>No los he leido, pero acepto los  <a href="{{ route('index') }}" class="terms-policy-link">Terminos</a> y la <a href="{{ route('index') }}" class="terms-policy-link">Política de privacidad.</a></label>
                             @endif
-                            {{-- <input type="checkbox" id="terms" name="terms" required />
-                            <label for="terms" class="label-terms"><span><span></span></span>No los he leido, pero acepto los  <a href="{{ route('index') }}" class="terms-policy-link">Terminos</a> y la <a href="{{ route('index') }}" class="terms-policy-link">Política de privacidad.</a></label>
-                        --}} </div>
+
+                        </div>
+
                         <div class="form-group">
                             <input type="submit" name="submit" id="submit" class="submit-link-register submit" value="{{ __('Registrarse') }}"/>
                         </div>

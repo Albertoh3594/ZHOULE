@@ -16,9 +16,6 @@ class CreateOrderLinesTable extends Migration
         Schema::create('order_lines', function (Blueprint $table) {
             $table->id();
 
-            //table->unsignedBigInteger('order_id');
-            //$table->unsignedBigInteger('product_id');
-
             $table->float('price', 4, 2);
             $table->integer('amount');
 

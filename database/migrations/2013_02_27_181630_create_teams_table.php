@@ -19,7 +19,6 @@ class CreateTeamsTable extends Migration
             $table->dateTime('date_time_competition')->nullable();
             $table->timestamps();
 
-            //$table->unsignedBigInteger('game_id');
             $table->foreignId('game_id')->references('id')->on('games')->delete('cascade');
         });
     }

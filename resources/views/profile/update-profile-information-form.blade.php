@@ -62,9 +62,9 @@
         <div class="w-md-75">
             <!-- Name -->
             <div class="mb-3">
-                <x-jet-label for="nombre" value="{{ __('Nombre') }}" />
-                <x-jet-input id="nombre" type="text" class="{{ $errors->has('nombre') ? 'is-invalid' : '' }}" wire:model.defer="state.nombre" autocomplete="nombre" />
-                <x-jet-input-error for="nombre" />
+                <x-jet-label for="name" value="{{ __('Nombre') }}" />
+                <x-jet-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}" wire:model.defer="state.name" autocomplete="name" />
+                <x-jet-input-error for="name" />
             </div>
 
             <!-- Email -->

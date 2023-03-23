@@ -11,10 +11,7 @@ $(document).ready(function() {
         }
     });
 
-
-
     /*FUNCION PARA PODER OCULTAR Y VER EL INPUT CONFIRMAR CONTRASEÑA CON EL ICONO DEL OJO*/
-
 
     $(".toggle-password-confirmation").click(function() {
         /* alert($(this).attr('toggle')); */

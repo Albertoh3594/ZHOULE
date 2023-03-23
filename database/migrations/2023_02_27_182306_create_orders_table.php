@@ -18,12 +18,10 @@ class CreateOrdersTable extends Migration
             $table->integer('n_order')->unique();
             $table->dateTime('date_time_creation');
             $table->dateTime('date_time_sent')->nullable();
-            //table->dateTime('fecha_hora_entregado')->nullable();
             $table->string('observations')->nullable();
             $table->string('status', 20);
             $table->timestamps();
 
-            //$table->unsignedBigInteger('user_id');
             $table->foreignId('user_id')->references('id')->on('users');
         });
     }
